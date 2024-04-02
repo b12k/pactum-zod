@@ -1,4 +1,5 @@
 import { settings } from 'pactum';
+import { env } from './env';
 
 const zodSchemaAdapter: settings.JsonSchemaAdapter = {
   validate: (zodObject: Zod.ZodObject<Zod.ZodRawShape>, json: JSON) => {
@@ -18,3 +19,4 @@ const zodSchemaAdapter: settings.JsonSchemaAdapter = {
 };
 
 settings.setJsonSchemaAdapter(zodSchemaAdapter);
+settings.setLogLevel(env.LOG_LEVEL as settings.LogLevel);

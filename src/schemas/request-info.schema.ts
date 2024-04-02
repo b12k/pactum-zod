@@ -1,3 +1,5 @@
+import z from 'zod';
+
 export const requestInfoSchema = z.object({
   seed: z.string().optional(),
   results: z.number(),
@@ -5,4 +7,4 @@ export const requestInfoSchema = z.object({
   version: z.string(),
 });
 
-export type RequestInfo = Zod.infer<typeof requestInfoSchema>;
+export type RequestInfo = z.infer<typeof requestInfoSchema>;

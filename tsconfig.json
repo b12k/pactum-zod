@@ -23,11 +23,11 @@
     "forceConsistentCasingInFileNames": true,
     "declaration": true,
     "baseUrl": ".",
-    "types": ["jest", "node", "zod"],
+    "types": ["jest", "node"],
     "outDir": "dist",
     "paths": {
-      "@schemas": ["src/schemas"],
-      "@contracts": ["src/contracts"]
+      "@config": ["config"],
+      "@schemas": ["src/schemas"]
     }
   },
   "include": ["**/*.ts"],

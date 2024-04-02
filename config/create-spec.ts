@@ -1,6 +1,4 @@
 import { spec } from 'pactum';
-import type { BaseRequest } from '@contracts';
-
 import { env } from './env';
 
 type PactumSpec = ReturnType<typeof spec>;
@@ -16,6 +14,13 @@ type SpecCreatorConfig<T> = {
   request?: T;
   options?: SpecCreatorConfigOptions;
 };
+
+export interface BaseRequest {
+  params?: unknown;
+  query?: unknown;
+  headers?: unknown;
+  json?: unknown;
+}
 
 const defaultCreatorConfigOptions: SpecCreatorConfigOptions = {
   baseUrl: env.BASE_URL as UrlString,

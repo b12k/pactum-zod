@@ -1,7 +1,7 @@
+import z from 'zod';
 import { userSchema, requestInfoSchema } from '@schemas';
-import type { BaseRequest } from '@contracts';
 
-export interface GetUserRequest extends BaseRequest {
+export interface GetUserRequest {
   params: {
     id: string;
   };
@@ -12,4 +12,4 @@ export const getUserResponseSchema = z.object({
   info: requestInfoSchema,
 });
 
-export type GetUserResponse = Zod.infer<typeof getUserResponseSchema>;
+export type GetUserResponse = z.infer<typeof getUserResponseSchema>;

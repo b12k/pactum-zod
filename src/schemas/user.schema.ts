@@ -1,3 +1,5 @@
+import z from 'zod';
+
 export const userSchema = z.object({
   gender: z.enum(['female', 'male']),
   name: z.object({
@@ -7,4 +9,4 @@ export const userSchema = z.object({
   }),
 });
 
-export type User = Zod.infer<typeof userSchema>;
+export type User = z.infer<typeof userSchema>;
