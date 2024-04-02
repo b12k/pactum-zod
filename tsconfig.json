@@ -1,4 +1,10 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "ts-node": {
+    "compilerOptions": {
+      "verbatimModuleSyntax": false
+    }
+  },
   "compilerOptions": {
     "module": "ESNext",
     "strict": true,
@@ -15,8 +21,15 @@
     "verbatimModuleSyntax": true,
     "useDefineForClassFields": true,
     "forceConsistentCasingInFileNames": true,
-    "baseUrl": "."
+    "declaration": true,
+    "baseUrl": ".",
+    "types": ["jest", "node", "zod"],
+    "outDir": "dist",
+    "paths": {
+      "@schemas": ["src/schemas"],
+      "@contracts": ["src/contracts"]
+    }
   },
-  "include": ["src/**/*.ts"],
+  "include": ["**/*.ts"],
   "exclude": ["node_modules"]
 }
