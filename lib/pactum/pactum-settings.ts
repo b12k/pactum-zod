@@ -1,12 +1,13 @@
 import { settings } from 'pactum';
-import { env } from './env';
+
+import { env } from '../env';
 
 const zodSchemaAdapter: settings.JsonSchemaAdapter = {
   validate: (zodObject: Zod.ZodObject<Zod.ZodRawShape>, json: JSON) => {
     const parseResult = zodObject.safeParse(json);
     if (!parseResult.success) {
       const missmatches = Object.fromEntries(
-        parseResult.error.issues.map(({ path, message }) => [
+        parseResult.error.issues.map(({ message, path }) => [
           path.join('.'),
           message,
         ]),

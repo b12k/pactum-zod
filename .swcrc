@@ -7,6 +7,11 @@
     "parser": {
       "syntax": "typescript"
     },
+    "baseUrl": "./",
+    "paths": {
+      "@lib": ["lib"],
+      "@schemas": ["contracts/schemas"]
+    },
     "target": "esnext"
   }
 }

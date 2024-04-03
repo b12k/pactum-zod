@@ -1,5 +1,5 @@
+import { requestInfoSchema, userSchema } from '@schemas';
 import z from 'zod';
-import { userSchema, requestInfoSchema } from '@schemas';
 
 export interface GetUserRequest {
   params: {
@@ -8,8 +8,8 @@ export interface GetUserRequest {
 }
 
 export const getUserResponseSchema = z.object({
-  results: z.array(userSchema),
   info: requestInfoSchema,
+  results: z.array(userSchema),
 });
 
 export type GetUserResponse = z.infer<typeof getUserResponseSchema>;

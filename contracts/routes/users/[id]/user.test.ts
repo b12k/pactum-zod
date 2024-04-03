@@ -1,5 +1,4 @@
-import { createSpec } from '@config';
-import { getUserResponseSchema, type GetUserRequest } from './user.contract';
+import { type GetUserRequest, getUserResponseSchema } from './user.contract';
 
 describe('CRUD /users', () => {
   it('GET: /users', async () => {

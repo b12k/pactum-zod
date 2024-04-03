@@ -4,6 +4,6 @@
     "emitDeclarationOnly": true
   },
   "extends": "./tsconfig.json",
-  "include": ["src/**/*.ts"],
-  "exclude": ["node_modules", "src/**/*.spec.ts"]
+  "include": ["contracts/**/*.ts"],
+  "exclude": ["node_modules", "contracts/**/*.test.ts"]
 }

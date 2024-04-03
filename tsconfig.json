@@ -10,7 +10,6 @@
     "strict": true,
     "target": "ESNext",
     "skipLibCheck": true,
-    "importHelpers": true,
     "esModuleInterop": true,
     "moduleResolution": "bundler",
     "isolatedModules": true,
@@ -22,12 +21,12 @@
     "useDefineForClassFields": true,
     "forceConsistentCasingInFileNames": true,
     "declaration": true,
-    "baseUrl": ".",
+    "baseUrl": "./",
     "types": ["jest", "node"],
-    "outDir": "dist",
+    "outDir": "dist/contracts",
     "paths": {
-      "@config": ["config"],
-      "@schemas": ["src/schemas"]
+      "@lib": ["lib"],
+      "@schemas": ["contracts/schemas"]
     }
   },
   "include": ["**/*.ts"],
