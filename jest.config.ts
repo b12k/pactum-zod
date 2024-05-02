@@ -6,4 +6,5 @@ const config: Config = createJestConfig({
   extension: 'ts',
   libDir: '<rootDir>/lib',
 });
+
 export default config;

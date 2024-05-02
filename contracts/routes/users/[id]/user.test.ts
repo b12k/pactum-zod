@@ -4,9 +4,14 @@ describe('CRUD /users', () => {
   it('GET: /users', async () => {
     await createSpec<GetUserRequest>({
       method: 'GET',
-      path: '/api',
+      path: '/api/{id}',
+      request: {
+        params: {
+          id: 'foo',
+        },
+      },
     })
-      .expectStatus(200)
+      .expectStatus(404)
       .expectJsonSchema(getUserResponseSchema);
   });
 });

@@ -20,6 +20,8 @@
     "perfectionist"
   ],
   "rules": {
+    "sort-imports": "off",
+    "sort-keys": "off",
     "prettier/prettier": "error",
     "import/prefer-default-export": "off",
     "import/extensions": [
@@ -29,10 +31,8 @@
         "ts": "never"
       }
     ],
-    "unicorn/import-style": "off",
-    "unicorn/prefer-module": "off",
+    "import/order": "off",
     "unicorn/no-array-reduce": "off",
-    "unicorn/prefer-top-level-await": "off",
     "unicorn/no-array-for-each": "off",
     "unicorn/no-useless-undefined": "off",
     "unicorn/prevent-abbreviations": [
@@ -40,7 +40,8 @@
       {
         "allowList": {
           "env": true,
-          "Env": true
+          "Env": true,
+          "dir": true
         }
       }
     ]
@@ -66,9 +67,7 @@
       ],
       "plugins": ["@typescript-eslint"],
       "rules": {
-        "@typescript-eslint/no-misused-promises": "off",
-        "@typescript-eslint/no-floating-promises": "off",
-        "typescript-eslint/prefer-namespace-keyword": "off"
+        "@typescript-eslint/no-floating-promises": "off"
       }
     }
   ]

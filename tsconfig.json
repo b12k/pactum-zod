@@ -29,6 +29,6 @@
       "@schemas": ["contracts/schemas"]
     }
   },
-  "include": ["**/*.ts"],
+  "include": ["**/*.ts", "**/*.js", ".release-it.js"],
   "exclude": ["node_modules"]
 }
