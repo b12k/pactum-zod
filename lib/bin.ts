@@ -1,13 +1,16 @@
 #!/usr/bin/env node
-/*global console*/
+
 import { program } from 'commander';
 import jest from 'jest';
 import { snakeCase } from 'lodash-es';
+import path from 'node:path';
 import updateNotifier from 'update-notifier';
 
 import packageJson from '../package.json' assert { type: 'json' };
 
 type CliOptions = {
+  baseGqlUrl?: string;
+  baseRestUrl?: string;
   baseUrl?: string;
   logLevel?: string;
   version: boolean;
@@ -22,7 +25,9 @@ updateNotifier({
 });
 
 const options = program
-  .option('-u, --base-url <baseUrl>', 'Contract tests base url')
+  .option('-b, --base-url <baseUrl>', 'Base URL')
+  .option('-r, --base-rest-url <baseRestUrl>', 'Base GQL URL')
+  .option('-g, --base-gql-url <baseGqlUrl>', 'Base REST URL')
   .option('-v, --version', 'Show current version')
   .option(
     '-l, --log-level <logLevel>',
@@ -44,4 +49,4 @@ Object.entries(options).forEach(([key, value]) => {
   process.env[variableName] = value as string;
 });
 
-await jest.run([]);
+await jest.run([], path.resolve('..', import.meta.dirname));

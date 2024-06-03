@@ -2,7 +2,7 @@ import z from 'zod';
 
 export interface GetUserRequest {
   params: {
-    id: string;
+    id: number;
   };
 }
 

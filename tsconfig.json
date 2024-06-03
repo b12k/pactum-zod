@@ -23,7 +23,7 @@
     "declaration": true,
     "baseUrl": "./",
     "types": ["jest", "node"],
-    "outDir": "dist/contracts",
+    "outDir": "dist",
     "paths": {
       "@lib": ["lib"],
       "@schemas": ["contracts/schemas"]

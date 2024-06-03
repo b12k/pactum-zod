@@ -1,8 +1,8 @@
-import { spec } from 'pactum';
+import pactum from 'pactum';
 
 import { env } from '../env';
 
-type PactumSpec = ReturnType<typeof spec>;
+type PactumSpec = ReturnType<typeof pactum.spec>;
 type HttpMethod = 'DELETE' | 'GET' | 'POST' | 'PUT';
 type RelativePathString = `/${string}`;
 type UrlString = `http://${string}` | `https://${string}`;
@@ -24,7 +24,7 @@ export interface BaseRequest {
 }
 
 const defaultCreatorConfigOptions: SpecCreatorConfigOptions = {
-  baseUrl: env.BASE_URL as UrlString,
+  baseUrl: (env.BASE_REST_URL || env.BASE_URL) as UrlString,
 };
 
 export const createSpec = <T extends BaseRequest>(
@@ -37,7 +37,7 @@ export const createSpec = <T extends BaseRequest>(
     ...options,
   };
 
-  const pactumSpec = spec();
+  const pactumSpec = pactum.spec();
 
   pactumSpec.withMethod(method).withPath(`${baseUrl}${path}`);
 
