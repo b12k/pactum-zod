@@ -1,7 +1,9 @@
 import z from 'zod';
 
 const envSchema = z.object({
-  BASE_URL: z.string().url(),
+  BASE_GQL_URL: z.string().url().optional().or(z.literal('')),
+  BASE_REST_URL: z.string().url().optional().or(z.literal('')),
+  BASE_URL: z.string().url().optional().or(z.literal('')),
   LOG_LEVEL: z
     .enum(['VERBOSE', 'TRACE', 'DEBUG', 'INFO', 'WARN', 'ERROR', 'SILENT'])
     .optional()

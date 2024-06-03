@@ -23,12 +23,12 @@
     "declaration": true,
     "baseUrl": "./",
     "types": ["jest", "node"],
-    "outDir": "dist/contracts",
+    "outDir": "dist",
     "paths": {
       "@lib": ["lib"],
       "@schemas": ["contracts/schemas"]
     }
   },
-  "include": ["**/*.ts"],
+  "include": ["**/*.ts", "**/*.js", ".release-it.js"],
   "exclude": ["node_modules"]
 }

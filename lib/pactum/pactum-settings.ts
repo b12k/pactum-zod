@@ -1,8 +1,8 @@
-import { settings } from 'pactum';
+import pactum from 'pactum';
 
-import { env } from '../env';
+import { env as environment } from '../env';
 
-const zodSchemaAdapter: settings.JsonSchemaAdapter = {
+const zodSchemaAdapter: pactum.settings.JsonSchemaAdapter = {
   validate: (zodObject: Zod.ZodObject<Zod.ZodRawShape>, json: JSON) => {
     const parseResult = zodObject.safeParse(json);
     if (!parseResult.success) {
@@ -15,9 +15,9 @@ const zodSchemaAdapter: settings.JsonSchemaAdapter = {
       return `💩\n${JSON.stringify(missmatches, undefined, 2)}`;
     }
 
-    return undefined;
+    return;
   },
 };
 
-settings.setJsonSchemaAdapter(zodSchemaAdapter);
-settings.setLogLevel(env.LOG_LEVEL as settings.LogLevel);
+pactum.settings.setJsonSchemaAdapter(zodSchemaAdapter);
+pactum.settings.setLogLevel(environment.LOG_LEVEL as pactum.settings.LogLevel);

@@ -1,3 +1,5 @@
+import { createSpec } from '@lib';
+
 import { type GetUsersRequest, getUsersResponseSchema } from './users.contract';
 
 describe('/users', () => {
@@ -5,11 +7,6 @@ describe('/users', () => {
     await createSpec<GetUsersRequest>({
       method: 'GET',
       path: '/api',
-      request: {
-        params: {
-          id: '123',
-        },
-      },
     })
       .expectStatus(200)
       .expectJsonSchema(getUsersResponseSchema);
