@@ -24,7 +24,7 @@
     "qc": "run-p _qc:*",
     "fix": "run-s _fix:*",
     "build": "run-s _build:*",
-    "prepare": "husky",
+    "prepare": "run-s _prepare:*",
     "release": "release-it --ci",
     "_test:run": "env-cmd jest",
     "_qc:eslint": "pnpm _eslint",

@@ -6,6 +6,7 @@ export interface GetUsersRequest {
     id: string;
   };
 }
+
 export const getUsersResponseSchema = z.object({
   info: requestInfoSchema,
   results: z.array(userSchema),
